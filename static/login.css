@@ -1,0 +1,104 @@
+/* --- Login Page Scoped Styles --- */
+
+/* Container */
+.login-container {
+    max-width: 360px;
+    margin: 4rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title + Subtitle */
+.login-container .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #014706; /* Matches base theme green */
+    margin-bottom: 0.5rem;
+}
+
+.login-container .subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Error Message */
+.login-container .error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Form */
+.login-container form {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.login-container .input-group {
+    margin-bottom: 1.2rem;
+}
+
+.login-container .input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.login-container .input-group input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container .input-group input:focus {
+    border: 1px solid #014706;
+    outline: none;
+    box-shadow: 0 0 6px rgba(1, 71, 6, 0.4);
+}
+
+/* Login Button */
+.login-container .login-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, #014706, #a2f28c);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-container .login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.login-container .footer-text {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

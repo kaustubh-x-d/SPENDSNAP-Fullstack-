@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h1 class="title">💰 SpendSnap</h1>
+    <p class="subtitle">Welcome back! Please login to continue.</p>
+
+    <!-- Error message from Flask -->
+    {% if error %}
+    <div class="error-message">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <!-- Login Form -->
+    <form method="POST">
+        <div class="input-group">
+            <label for="Budget">Budget</label>
+            <input type="text" name="Budget" id="username" required>
+        </div>
+
+        <button type="submit" class="login-btn">submit</button>
+    </form>
+</div>
+{% endblock %}

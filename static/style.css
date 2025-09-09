@@ -1,0 +1,160 @@
+/* --- Reset some defaults --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title{
+  color: #431002;
+}
+body {
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Header --- */
+.site-header {
+  background: linear-gradient(90deg, #cef1c3, #053a06);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.site-header h1 {
+  font-size: 1.8rem;
+}
+
+.site-header nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.site-header nav a:hover {
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* --- Image marquee --- */
+.image-marquee {
+  overflow: hidden;
+  background: #e6f0d7;
+  padding: 1rem 0;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.marquee-track {
+  display: block;
+  width: calc(250px * 12); /* width per image * total images */
+  animation: scroll 20s linear infinite;
+}
+
+.marquee-track img {
+  width: 200px;
+  height: 120px;
+  margin: 0 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marquee-track img:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- Dashboard --- */
+.dashboard {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.dash-head h2 {
+  color: #032d06;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.dash-head p {
+  color: #555;
+}
+
+/* --- Cards / Buttons --- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-content: center;
+}
+
+.card {
+  display: block;
+  padding: 1.2rem 1rem;
+  background: linear-gradient(135deg, #014706, #a2f28c);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* --- App description blurb --- */
+.app-blurb {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background: #fff0f5;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  color: #555;
+  background: #f5f7fa;
+}
+
+/* --- Responsive tweaks --- */
+@media (max-width: 600px) {
+  .marquee-track img {
+    width: 140px;
+    height: 80px;
+  }
+  .dash-head h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}

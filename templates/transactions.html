@@ -1,0 +1,30 @@
+
+  {% extends "base.html" %}
+
+  {% block title %}SpendSnap{% endblock %}
+  {% block content %}
+    <header class="dash-head">
+      <h2 class="section-title">Welcome</h2>
+      <p>Choose an action to manage your budget.</p>
+    </header>
+
+    <div class="features" class="card-wrapper">
+      <!-- exact buttons you asked for -->
+      <a href="/add" class="card" aria-label="Add Expense" class="reflect">➕ Add Expense</a>
+      <a href="/edit" class="card" aria-label="Edit Expense" class="reflect">✏️ Edit Expense</a>
+      <a href="/delete" class="card" aria-label="Delete Expense" class="reflect">🗑️ Delete Expense</a>
+      <a href="/transactions" class="card" aria-label="Show all transactions" class="reflect">
+        📊 Show All Transactions<br>
+      </a>
+      <a href="/export" class="card" aria-label="Export Data"  class="reflect">📂 Export</a>
+    </div>
+
+    <!-- Short description just above footer -->
+    <section class="app-blurb">
+      <p>
+        Budget Tracker helps you capture expenses in seconds, analyze by category/date,
+        and stay inside your monthly budget with clear summaries and exports.
+        Built to be fast, minimal, and distraction-free.
+      </p>
+    </section>
+  {% endblock %}

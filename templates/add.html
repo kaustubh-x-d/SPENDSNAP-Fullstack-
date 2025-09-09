@@ -1,0 +1,48 @@
+
+  {% extends "base.html" %}
+
+  {% block title %}Add Expense{% endblock %}
+  {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+{% endblock %}
+  {% block content %}
+<div class="expense-container">
+    <h2 class="expense-title">➕ Add Expense</h2>
+    <p class="expense-subtitle">Record your spending and stay on track</p>
+
+    <!-- Flask error/success messages -->
+    {% if error %}
+    <div class="expense-error">{{ error }}</div>
+    {% endif %}
+    {% if message %}
+    <div class="expense-success">{{ message }}</div>
+    {% endif %}
+
+    <form method="POST" action="/add_expense" class="expense-form">
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>-- Select Category --</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Health and Fitness">Health and Fitness</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Relative/Friends">Relative/Friends</option>
+                <option value="Entertainment">Entertainment</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount (₹)</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="expense-btn">Add Expense</button>
+    </form>
+</div>
+{% endblock %}
+

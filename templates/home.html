@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="dashboard">   
+        <section class="image-marquee">
+        <div class="marquee-track">
+        <!-- Group 1 -->
+            <img src="{{ url_for('static', filename='images/calender.png') }}" alt="Budget 1">
+            <img src="{{ url_for('static', filename='images/receipt.jpg') }}" alt="Budget 2">
+            <img src="{{ url_for('static', filename='images/wallet.jpg') }}" alt="Budget 3">
+            <img src="{{ url_for('static', filename='images/chart.jpg') }}" alt="Budget 4">
+
+    <!-- Group 2 (duplicate for infinite loop) -->
+            <img src="{{ url_for('static', filename='images/calender.png') }}" alt="" aria-hidden="true">
+            <img src="{{ url_for('static', filename='images/receipt.jpg') }}" alt="" aria-hidden="true">
+            <img src="{{ url_for('static', filename='images/wallet.jpg') }}" alt="" aria-hidden="true">
+            <img src="{{ url_for('static', filename='images/chart.jpg') }}" alt="" aria-hidden="true">
+
+    <!-- More duplicates as needed -->
+            <img src="{{ url_for('static', filename='images/calender.png') }}" alt="Budget 1">
+            <img src="{{ url_for('static', filename='images/receipt.jpg') }}" alt="Budget 2">
+            <img src="{{ url_for('static', filename='images/wallet.jpg') }}" alt="Budget 3">
+            <img src="{{ url_for('static', filename='images/chart.jpg') }}" alt="Budget 4">
+
+        </div>
+        </section>
+    </div>
+    <div class="features" class="card-wrapper">
+        <!-- exact buttons you asked for -->
+        <a href="/login.html" class="card" aria-label="login" class="reflect">Login</a>
+        <a href="/signup.html" class="card" aria-label="signup" class="reflect">Signup</a>
+    </div>
+
+{% endblock %}

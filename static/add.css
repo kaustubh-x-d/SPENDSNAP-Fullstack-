@@ -1,0 +1,88 @@
+/* --- Add Expense Page Styling --- */
+.expense-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.expense-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #014706;
+}
+
+.expense-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.expense-error {
+  background: #ffdddd;
+  color: #a30000;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.expense-success {
+  background: #ddffdd;
+  color: #035a03;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.expense-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #014706;
+  box-shadow: 0 0 8px rgba(1, 71, 6, 0.3);
+}
+
+.expense-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #014706, #a2f28c);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expense-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(1, 71, 6, 0.3);
+}
