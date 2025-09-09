@@ -20,7 +20,7 @@ def sign_up():
     if request.method=="POST":
         global user_name
         global passwordd
-        user_name=request.form["Username"]
+        user_name=request.form["Username"].strip()
         passwordd=request.form["Password"]
         cursor.execute("SELECT * FROM user WHERE username = %s", (user_name,))
         if cursor.fetchone():
@@ -45,7 +45,7 @@ def login():
     if request.method=="POST":
         global user_name
         global passwordd
-        user_name=request.form["Username"]
+        user_name=request.form["Username"].strip()
         passwordd=request.form["Password"]
         cursor.execute("Select * from user where username=%s and password=%s", (user_name,passwordd))
         result=cursor.fetchone()
@@ -107,8 +107,19 @@ def add():
 
 @app.route("/transactions.html", methods=["GET","POST"])
 def show():
+    columns=[]
+    data=[]
     if request.method=="POST":
-        
-
+        choice=request.form.get("Choice","")
+        if choice.lower()=="category":
+            columns=["Category","Amount"]
+            data=C.categories(user_name)
+        elif choice.lower()=="date":
+            columns=["Date","Amount"] 
+            data=C.show_d(user_name)
+        elif choice.lower()=="no filters":
+            columns=["Amount","Date","Category"]
+            data=C.show_T(user_name)
+    return render_template("transactions.html",columns=columns, row_data=data)
 if __name__ == "__main__":
     app.run(debug=True)

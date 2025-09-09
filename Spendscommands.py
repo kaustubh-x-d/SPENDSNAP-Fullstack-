@@ -36,13 +36,15 @@ def add_expense(amount,category,datee,user):
 def show_T(username):
     cursor.execute("SELECT budget_start FROM remaining_budget WHERE username = %s", (username,))
     budget_start = cursor.fetchone()[0]
-    cursor.execute("Select * from transactions where username=%s AND date >= %s;",(username,budget_start))
+    print(budget_start,type(budget_start))
+    cursor.execute("Select amount, Date, Category from transactions where username=%s AND date >= %s ;",(username,budget_start))
     transactions_data=cursor.fetchall()
     return transactions_data
-
+print(show_T("hide"))
 def categories(username):
     cursor.execute("SELECT budget_start FROM remaining_budget WHERE username = %s", (username,))
     budget_start = cursor.fetchone()[0]
+    print(budget_start,type(budget_start))
     cursor.execute("select Category, Sum(amount) from transactions where username=%s AND date >= %s group by Category;",(username, budget_start))
     category_data=cursor.fetchall()
     return category_data
@@ -55,7 +57,7 @@ def show_R(username):
 def show_d(username):
     cursor.execute("SELECT budget_start FROM remaining_budget WHERE username = %s", (username,))
     budget_start = cursor.fetchone()[0]
-    cursor.execute("select Category, Sum(amount) from transactions where username=%s AND date >= %s group by Category;",(username, budget_start))
+    cursor.execute("select Date, Sum(amount) from transactions where username=%s AND date >= %s group by Date;",(username, budget_start))
     category_data=cursor.fetchall()
     return category_data
 

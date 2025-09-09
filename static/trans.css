@@ -1,0 +1,106 @@
+/* --- Transactions Page --- */
+.transactions-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.trans-header h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #014706;
+  margin-bottom: 1.5rem;
+}
+
+/* Filter form */
+.filter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-form select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.filter-form select:focus {
+  border-color: #014706;
+  box-shadow: 0 0 6px rgba(1, 71, 6, 0.3);
+}
+
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #014706, #a2f28c);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(1, 71, 6, 0.3);
+}
+
+/* Divider */
+.divider {
+  margin: 1.5rem 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.trans-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.trans-table thead {
+  background: linear-gradient(135deg, #014706, #a2f28c);
+  color: white;
+}
+
+.trans-table th,
+.trans-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.trans-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.trans-table tr:hover {
+  background: #f0fff0;
+}
+
+/* No records message */
+.no-records {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 2rem;
+}
