@@ -120,6 +120,30 @@ def show():
         elif choice.lower()=="no filters":
             columns=["Amount","Date","Category"]
             data=C.show_T(user_name)
+        elif choice.lower()=="exit":
+            return redirect(url_for("spendsnap"))
     return render_template("transactions.html",columns=columns, row_data=data)
+@app.route("/edit.html",methods=["GET","POST"])
+def edit_D():
+    if request.method=="POST":
+        columns=request.form["Column"]
+        category=request.form["Category"]
+        date=request.form["Date"]
+        edited_amt=request.form["amt"]
+        edited_date=request.form["Edit_date"]
+        edited_category=request.form["Edit_categ"]
+        C.Edit(columns,category,date,edited_amt,edited_date,edited_category,user_name)
+        return redirect(url_for("spendsnap"))
+    return render_template("edit.html")
+
+@app.route("/delete.html",methods=["GET","POST"])
+def delete():
+    if request.method=="POST":
+        date=request.form["date"]
+        category=request.form["category"]
+        C.delete(date,category,user_name)
+        return redirect(url_for("spendsnap"))
+    return render_template("delete.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

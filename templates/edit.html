@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Transaction{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-container">
+    <header class="edit-header">
+        <h1>✏️ Edit Transaction</h1>
+        <p>Select the field you want to update, then enter details below.</p>
+    </header>
+
+    <form method="POST" action="{{ url_for('edit_D') }}" class="edit-form">
+        <!-- Choose column -->
+        <div class="input-group">
+            <label for="column">What do you want to edit?</label>
+            <select id="column" name="Column" required>
+                <option value="amount">Amount</option>
+                <option value="date">Date</option>
+                <option value="category">Category</option>
+            </select>
+        </div>
+
+        <!-- Identify transaction -->
+        <div class="input-group">
+            <label for="category">Current Category</label>
+            <select id="category" name="Category" required>
+                <option value="Grocery">Grocery</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Health and Fitness">Health and Fitness</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Relatives/Friends">Relative/Friends</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="date">Current Date</label>
+            <input type="date" id="date" name="Date" required>
+        </div>
+
+        <!-- New values -->
+        <div class="input-group">
+            <label for="amt">New Amount</label>
+            <input type="number" id="amt" name="amt" placeholder="Enter new amount">
+        </div>
+
+        <div class="input-group">
+            <label for="edit-date">New Date</label>
+            <input type="date" id="edit-date" name="Edit_date">
+        </div>
+
+        <div class="input-group">
+            <label for="edit-categ">New Category</label>
+            <input type="text" id="edit-categ" name="Edit_categ" placeholder="e.g., Travel">
+        </div>
+
+        <button type="submit" class="update-btn">Update Transaction</button>
+    </form>
+</div>
+{% endblock %}

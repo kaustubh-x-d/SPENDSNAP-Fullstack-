@@ -1,0 +1,85 @@
+/* --- Container --- */
+.edit-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Header --- */
+.edit-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.edit-header h1 {
+  color: #014706;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.edit-header p {
+  color: #555;
+}
+
+/* --- Forms --- */
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #014706;
+  box-shadow: 0 0 6px rgba(1, 71, 6, 0.3);
+}
+
+/* --- Buttons --- */
+.search-btn, .update-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #014706, #a2f28c);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-btn:hover,
+.update-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(1, 71, 6, 0.3);
+}
+
+/* --- Divider --- */
+.divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* --- No Records --- */
+.no-records {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #c0392b;
+  margin-top: 2rem;
+}

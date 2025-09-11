@@ -40,11 +40,10 @@ def show_T(username):
     cursor.execute("Select amount, Date, Category from transactions where username=%s AND date >= %s ;",(username,budget_start))
     transactions_data=cursor.fetchall()
     return transactions_data
-print(show_T("hide"))
+
 def categories(username):
     cursor.execute("SELECT budget_start FROM remaining_budget WHERE username = %s", (username,))
     budget_start = cursor.fetchone()[0]
-    print(budget_start,type(budget_start))
     cursor.execute("select Category, Sum(amount) from transactions where username=%s AND date >= %s group by Category;",(username, budget_start))
     category_data=cursor.fetchall()
     return category_data
@@ -69,13 +68,15 @@ def Edit(column,category,date,edited_amt,edited_date,edited_category,username):
         "Snacks", 
         "Relatives/Friends"
         ]
-    while True:
-        if category in allowed_categories:
-            break
-        else:
-            print("Invalid category. Choose from:", ", ".join(allowed_categories))
-    if column.lower()=="amount":
-        cursor.execute(f"UPDATE transactions SET {column} = %s WHERE Date = %s AND Category = %s AND username = %s",(edited_amt,date,category,username))
+    if category not in allowed_categories:
+        print("Invalid category. Choose from:", ", ".join(allowed_categories))
+        return  # exit early instead of infinite loop
+    
+    if column.lower() == "amount":
+        cursor.execute(
+            "UPDATE transactions SET amount = %s WHERE Date = %s AND Category = %s AND username = %s;",
+            (edited_amt, date, category, username)
+        )
     elif column.lower()=="date":
         edited__date=datetime.strptime(edited_date, "%Y-%m-%d").date()
         cursor.execute("update transactions set Date=%s where Date=%s and Category=%s and username=%s;", (edited__date,date,category,username))
@@ -93,11 +94,11 @@ def delete(date,category,username):
         "Relatives/Friends"
         ]
 
-    while True:
-        if category in allowed_categories:
-            break
-        else:
-            print("Invalid category. Choose from:", ", ".join(allowed_categories))
+    if category not in allowed_categories:
+        print("Invalid category. Choose from:", ", ".join(allowed_categories))
+        return  # exit early instead of infinite loop
+    
     cursor.execute("delete from transactions where Date=%s and Category=%s and username=%s;",(date_,category,username))
+    connector.commit()
 
 

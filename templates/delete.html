@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Transaction{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="edit-container">
+    <header class="edit-header">
+        <h1>❌ Delete Transaction</h1>
+    </header>
+
+    <form method="POST" action="{{ url_for('delete') }}" class="edit-form">
+        Column
+
+        <!-- Identify transaction -->
+        <div class="input-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="Grocery">Grocery</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Health and Fitness">Health and Fitness</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Relatives/Friends">Relative/Friends</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="update-btn">Update Transaction</button>
+    </form>
+</div>
+{% endblock %}
