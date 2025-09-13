@@ -176,7 +176,7 @@ def show():
     return render_template("transactions.html", columns=columns, row_data=data)
 
 
-# -------- EDIT TRANSACTION --------
+# -------- EDIT TRANSACTION ----------
 @app.route("/edit.html", methods=["GET", "POST"])
 def edit_D():
     if request.method == "POST":
