@@ -8,7 +8,7 @@ try:
     connector = my.connect(
         host="localhost",
         user="root",
-        password="210607",   
+        password="",   
         database="spendsnap"
     )
     cursor = connector.cursor()
