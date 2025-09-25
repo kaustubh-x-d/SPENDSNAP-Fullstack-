@@ -8,8 +8,8 @@ try:
     connector = my.connect(
         host="localhost",
         user="root",
-        password="210607",   # ⚠️ Better move to config in production
-        database="demo"
+        password="210607",   
+        database="spendsnap"
     )
     cursor = connector.cursor()
 except Exception as e:
